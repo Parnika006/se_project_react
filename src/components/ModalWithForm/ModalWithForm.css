@@ -1,0 +1,109 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: #0000004d; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+.modal__opened {
+  visibility: visible;
+}
+
+.modal__content {
+  background-color: white;
+  position: relative;
+  max-width: 496px;
+  height: 436px;
+  box-sizing: border-box;
+  width: 100%;
+  gap: 20px;
+  padding-right: 28px;
+  padding-left: 28px;
+  border-radius: 20px;
+  border: 1px rgba(0, 0, 0, 0.3) solid;
+}
+
+.modal__close {
+  background-image: url(../../assets/close.svg);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  background-repeat: no-repeat;
+}
+
+.modal__title {
+  margin: 0;
+  font-family: "CabinetGrotesk-Bold";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 28px;
+  padding-bottom: 24px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+}
+
+.modal__input {
+  display: block;
+  border: none;
+  border-bottom: solid;
+  width: 100%;
+  font-family: "CabinetGrotesk-Bold";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.modal__label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  height: 52px;
+  font-family: "CabinetGrotesk-Bold";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.modal__legend {
+  padding-bottom: 12px;
+}
+
+.modal__ratio-buttons {
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 108px;
+  max-width: 173px;
+  font-family: "CabinetGrotesk-Bold";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.modal__submit {
+  left: 0;
+  width: 124px;
+  height: 36px;
+  font-family: "CabinetGrotesk-Bold";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}

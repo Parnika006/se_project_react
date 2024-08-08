@@ -1,0 +1,19 @@
+.cards__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  gap: 21px;
+}
+
+.cards__list-container {
+  max-width: 100%;
+  overflow: hidden;
+}
+.cards__text {
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
