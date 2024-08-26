@@ -1,0 +1,37 @@
+.clothes-section__header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.clothes-section__heading {
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.clothes-section__button {
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.6);
+  border: none;
+  width: auto;
+  height: 25px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+  background: none;
+}
+
+.clothes-section__items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  gap: 18px;
+}

@@ -16,7 +16,7 @@
 }
 
 .header__add-clothes-button {
-  margin-left: auto;
+  margin-left: 20px;
   border: none;
   margin-right: 20px;
   font-family: "CabinetGrotesk-Bold";
@@ -36,6 +36,12 @@
   line-height: 24px;
   margin: 0;
 }
+
 .header__avatar {
   margin: 0;
+}
+
+.header__link {
+  text-decoration: none;
+  color: black;
 }

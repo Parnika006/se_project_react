@@ -1,6 +1,8 @@
 import "./Header.css";
 import Logo from "../../assets/Logo.svg";
 import avatar from "../../assets/avatar.png";
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
+import { Link } from "react-router-dom";
 
 function Header({ handleAddClick, weatherData }) {
   const currentDate = new Date().toLocaleString("default", {
@@ -9,11 +11,15 @@ function Header({ handleAddClick, weatherData }) {
   });
   return (
     <header className="header">
-      <img className="header__logo" src={Logo} alt="logo" />
+      <Link to="/se_project_react">
+        <img className="header__logo" src={Logo} alt="logo" />
+      </Link>
+
       <p className="header__date-and-location">
         {" "}
         {currentDate}, {weatherData.city}
       </p>
+      <ToggleSwitch />
       <button
         onClick={handleAddClick}
         type="button"
@@ -21,10 +27,12 @@ function Header({ handleAddClick, weatherData }) {
       >
         + Add Clothes
       </button>
-      <div className="header__user-container">
-        <p className="header__username"> Terrence Tegene</p>
-        <img className="header__avatar" src={avatar} alt="user avatar" />
-      </div>
+      <Link to="se_project_react/profile" className="header__link">
+        <div className="header__user-container">
+          <p className="header__username"> Terrence Tegene</p>
+          <img className="header__avatar" src={avatar} alt="user avatar" />
+        </div>
+      </Link>
     </header>
   );
 }

@@ -1,0 +1,8 @@
+.profile {
+  display: flex;
+  padding: 0;
+}
+
+.profile__sidebar {
+  width: 385px;
+}
