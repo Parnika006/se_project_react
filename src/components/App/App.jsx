@@ -12,6 +12,9 @@ import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { coordinates, APIkey } from "../../utils/constants";
 import { Routes, Route } from "react-router-dom";
 import Profile from "../Profile/Profile";
+//import { getItems } from "../../utils/api";
+import api from "../../utils/api";
+import DeleteCardModal from "../DeleteCardModal/DeleteCardModal";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -22,6 +25,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [clothingItems, setClothingItems] = useState([]);
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -32,12 +36,12 @@ function App() {
     setActiveModal("add-garment");
   };
 
-  const closeActiveModal = () => {
-    setActiveModal("");
+  const handleDeletClick = () => {
+    setActiveModal("delete-item");
   };
 
-  const handleAddItem = (values) => {
-    console.log(values);
+  const closeActiveModal = () => {
+    setActiveModal("");
   };
 
   const handleToggleSwitchChange = () => {
@@ -58,6 +62,38 @@ function App() {
       .catch(console.error);
   }, []);
 
+  useEffect(() => {
+    api
+      .getItems()
+      .then((data) => {
+        setClothingItems(data);
+      })
+      .catch(console.error);
+  }, []);
+
+  const handleAddItem = ({ name, weather, imageUrl }) => {
+    console.log(name, weather, imageUrl);
+    api
+      .addItems(name, weather, imageUrl)
+      .then((newItem) => {
+        setClothingItems([newItem, ...clothingItems]);
+
+        closeActiveModal();
+      })
+      .catch((err) => console.error(err));
+  };
+
+  const handleDeleteItem = (item) => {
+    api
+      .removeItems(item._id)
+      .then(() => {
+        setClothingItems(clothingItems.filter((card) => card._id !== item._id));
+
+        closeActiveModal();
+      })
+      .catch((err) => console.error(err));
+  };
+
   return (
     <div className="page">
       <CurrentTemperatureUnitContext.Provider
@@ -67,21 +103,26 @@ function App() {
           <Header handleAddClick={handleAddClick} weatherData={weatherData} />
           <Routes>
             <Route
-              path="/se_project_react"
+              path="/"
               element={
                 <Main
                   weatherData={weatherData}
                   handleCardClick={handleCardClick}
+                  clothingItems={clothingItems}
                 />
               }
             />
             <Route
-              path="/se_project_react/profile"
-              element={<Profile handleCardClick={handleCardClick} />}
+              path="/profile"
+              element={
+                <Profile
+                  handleCardClick={handleCardClick}
+                  clothingItems={clothingItems}
+                />
+              }
             />
           </Routes>
 
-          {/* <Main weatherData={weatherData} handleCardClick={handleCardClick} /> */}
           <Footer />
         </div>
 
@@ -96,9 +137,20 @@ function App() {
 
         {activeModal === "preview" && (
           <ItemModal
-            activeModal={activeModal === "preview"}
+            isOpen={activeModal === "preview"}
             card={selectedCard}
             closeActiveModal={closeActiveModal}
+            handleDeleteClick={handleDeletClick}
+            handleDeleteItem={handleDeleteItem}
+          />
+        )}
+
+        {activeModal === "delete-item" && (
+          <DeleteCardModal
+            isOpen={activeModal === "delete-item"}
+            card={selectedCard}
+            closeActiveModal={closeActiveModal}
+            handleDeleteItem={handleDeleteItem}
           />
         )}
       </CurrentTemperatureUnitContext.Provider>

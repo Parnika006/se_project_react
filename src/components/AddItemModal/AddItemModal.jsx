@@ -9,13 +9,11 @@ const AddItemModal = ({
 }) => {
   const [name, setName] = useState("");
   const handleNameChange = (e) => {
-    console.log(e.target.value);
     setName(e.target.value);
   };
 
   const [link, setUrl] = useState("");
   const handleUrlChange = (e) => {
-    console.log(e.target.value);
     setUrl(e.target.value);
   };
 
@@ -74,10 +72,9 @@ const AddItemModal = ({
           value={link}
           onChange={handleUrlChange}
           minLength="1"
-          maxLength="30"
         />
       </label>
-      <fieldset className="modal__ratio-buttons">
+      <fieldset className="modal__radio-buttons">
         <legend className="modal__legend"> Select the weather type: </legend>
         <label htmlFor="hot" className="modal__label modal__label_type_radio">
           <input
@@ -86,6 +83,7 @@ const AddItemModal = ({
             className="modal__radio-input"
             id="hot"
             onChange={handleWeatherChange}
+            value="hot"
           />{" "}
           HOT
         </label>
@@ -96,6 +94,7 @@ const AddItemModal = ({
             className="modal__radio-input"
             id="warm"
             onChange={handleWeatherChange}
+            value="warm"
           />{" "}
           WARM
         </label>
@@ -106,6 +105,7 @@ const AddItemModal = ({
             className="modal__radio-input"
             id="cold"
             onChange={handleWeatherChange}
+            value="cold"
           />{" "}
           COLD
         </label>

@@ -1,4 +1,4 @@
-.modal {
+/* .modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -14,7 +14,7 @@
 .modal__content_type_image {
   position: relative;
   max-width: 498px;
-  height: 610px;
+  height: 498px;
   width: 100%;
   padding: 0;
   border-radius: 16px;
@@ -63,3 +63,4 @@
   padding: 0;
   cursor: pointer;
 }
+ */
