@@ -20,7 +20,6 @@ const AddItemModal = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     handleAddItem({ name, weather: weatherInput, imageUrl: link, resetInputs });
-    closeActiveModal();
   };
 
   const [weatherInput, setWeatherInput] = useState("");
