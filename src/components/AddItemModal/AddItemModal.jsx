@@ -59,6 +59,7 @@ const AddItemModal = ({
           onChange={handleNameChange}
           minLength="1"
           maxLength="30"
+          required
         />
       </label>
       <label htmlFor="imageUrl" className="modal__label">
@@ -71,6 +72,7 @@ const AddItemModal = ({
           value={link}
           onChange={handleUrlChange}
           minLength="1"
+          required
         />
       </label>
       <fieldset className="modal__radio-buttons">
@@ -83,6 +85,7 @@ const AddItemModal = ({
             id="hot"
             onChange={handleWeatherChange}
             value="hot"
+            required
           />{" "}
           HOT
         </label>
@@ -94,6 +97,7 @@ const AddItemModal = ({
             id="warm"
             onChange={handleWeatherChange}
             value="warm"
+            required
           />{" "}
           WARM
         </label>
@@ -105,6 +109,7 @@ const AddItemModal = ({
             id="cold"
             onChange={handleWeatherChange}
             value="cold"
+            required
           />{" "}
           COLD
         </label>
