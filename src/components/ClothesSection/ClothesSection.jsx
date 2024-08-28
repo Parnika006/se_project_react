@@ -2,12 +2,12 @@
 import ItemCard from "../ItemCard/ItemCard";
 import "./ClothesSection.css";
 
-const ClothesSection = ({ handleCardClick, clothingItems }) => {
+const ClothesSection = ({ handleCardClick, clothingItems, handleAddClick }) => {
   return (
     <div className="clothes-section">
       <div className="clothes-section__header">
         <p className="clothes-section__heading">Your Items </p>
-        <button type="button" className="clothes-section__button">
+        <button type="button" className="clothes-section__button" onClick={handleAddClick}>
           + Add New
         </button>
       </div>

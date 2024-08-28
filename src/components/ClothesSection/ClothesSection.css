@@ -25,6 +25,7 @@
   text-overflow: clip;
   white-space: nowrap;
   background: none;
+  cursor: pointer;
 }
 
 .clothes-section__items {

@@ -88,18 +88,6 @@
       "name": "hat",
       "weather": "on",
       "imageUrl": "https://plus.unsplash.com/prem",
-      "_id": 17
-    },
-    {
-      "name": "hat",
-      "weather": "on",
-      "imageUrl": "https://plus.unsplash.com/prem",
-      "_id": 18
-    },
-    {
-      "name": "hat",
-      "weather": "on",
-      "imageUrl": "https://plus.unsplash.com/prem",
       "_id": 19
     },
     {
@@ -107,12 +95,6 @@
       "weather": "",
       "imageUrl": "https://plus.unsplash.com/prem",
       "_id": 20
-    },
-    {
-      "name": "hat",
-      "weather": "on",
-      "imageUrl": "https://plus.unsplash.com/prem",
-      "_id": 21
     },
     {
       "_id": 22

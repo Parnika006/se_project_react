@@ -118,6 +118,7 @@ function App() {
                 <Profile
                   handleCardClick={handleCardClick}
                   clothingItems={clothingItems}
+                  handleAddClick={handleAddClick}
                 />
               }
             />
@@ -137,7 +138,6 @@ function App() {
 
         {activeModal === "preview" && (
           <ItemModal
-            isOpen={activeModal === "preview"}
             card={selectedCard}
             closeActiveModal={closeActiveModal}
             handleDeleteClick={handleDeletClick}
