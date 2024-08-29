@@ -119,3 +119,5 @@ const AddItemModal = ({
 };
 
 export default AddItemModal;
+
+//already deleted the closeActiveModal() as per the review. See commit - https://github.com/Parnika006/se_project_react/commit/0f1c962adcd22a3038eecbb4647525c514364f0f

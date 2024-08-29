@@ -164,6 +164,12 @@
       "weather": "hot",
       "imageUrl": "https://plus.unsplash.com/prem",
       "_id": 38
+    },
+    {
+      "name": "hat",
+      "weather": "cold",
+      "imageUrl": "https://plus.unsplash.com/prem",
+      "_id": 39
     }
   ]
 }
