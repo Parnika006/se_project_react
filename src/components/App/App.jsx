@@ -21,7 +21,7 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import {register,login} from "../../utils/auth";
 import {setToken, getToken, removeToken} from "../../utils/token";
-import CurrentUserContext from "../contexts/CurrentUserContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
 // import { editProfile } from "../../utils/api";
 

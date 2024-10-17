@@ -1,4 +1,4 @@
-import CurrentUserContext from "../contexts/CurrentUserContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm"
 import { useState } from "react";

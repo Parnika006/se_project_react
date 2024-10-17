@@ -1,4 +1,4 @@
-import CurrentUserContext from "../contexts/CurrentUserContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import "./SideBar.css";
 // import avatar from "../../assets/avatar.png";
 import { useContext } from "react";

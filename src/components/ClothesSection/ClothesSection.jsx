@@ -1,6 +1,6 @@
 //import { defaultClothingItems } from "../../utils/constants";
 import ItemCard from "../ItemCard/ItemCard";
-import CurrentUserContext from "../contexts/CurrentUserContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import "./ClothesSection.css";
 import { useContext } from "react";
 
@@ -17,7 +17,7 @@ const ClothesSection = ({ handleCardClick, clothingItems, handleAddClick, isLogg
       </div>
       <ul className="clothes-section__items">
         {clothingItems
-        .filter((item) => currentUser && item.owner === currentUser?._id)
+        .filter((item) => currentUser && item.owner === currentUser?._id) //the '?' is giving it an initial value of null because otherwise the page is not rendering when reloaded because the value of currentUser is undefined.
         .map((item) => {
           return (
             <ItemCard
