@@ -19,7 +19,7 @@
   background-color: white;
   position: relative;
   max-width: 496px;
-  height: 436px;
+  max-height: 436px;
   box-sizing: border-box;
   width: 100%;
   gap: 20px;
@@ -54,7 +54,7 @@
 }
 
 .modal__close {
-  background-image: url(../../assets/close.svg);
+background-image: url(../../assets/close.svg); 
   width: 20px;
   height: 20px;
   position: absolute;
@@ -64,10 +64,12 @@
   background-size: contain;
   border: none;
   background-repeat: no-repeat;
-  cursor: pointer;
+  cursor: pointer; 
+  background-color: transparent;
 }
 
-.modal__content_type_image .modal__close {
+
+/* .modal__content_type_image .modal__close {
   background-image: url(../../assets/close_preview.svg);
   background-color: transparent;
   width: 20px;
@@ -81,7 +83,7 @@
   background-repeat: no-repeat;
   padding: 0;
   cursor: pointer;
-}
+} */
 
 .modal__title {
   margin: 0;
@@ -141,12 +143,22 @@
 
 .modal__submit {
   left: 0;
-  width: 124px;
+  max-width: 124px;
   height: 36px;
   font-family: "CabinetGrotesk-Bold";
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 36px;
+}
+
+.modal__submit-active{
+  background: rgba(0, 0, 0, 1);
 }
 
 .modal__caption {
@@ -180,6 +192,14 @@
   bottom: 68px;
   right: 32px;
   cursor: pointer;
+}
+
+.item__delete-button_visible .modal__delete-click-button {
+  visibility: visible;
+}
+
+.item__delete-button_hidden .modal__delete-click-button {
+  visibility: hidden;
 }
 
 .modal__content_type_delete {
@@ -242,3 +262,59 @@
   color: black;
   cursor: pointer;
 }
+
+.modal__login-submit-button{
+  width: 73px;
+  height: 36px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border: none;
+  font-family: "CabinetGrotesk-Bold";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+ .modal__login-submit-button-active{
+   background: rgba(0, 0, 0, 1);
+}
+
+.modal__login-register-button {
+  width: 79px;
+  height: 20px;
+  border: none;
+  background-color: #fff;
+  color: #00000080;
+  font-family: "CabinetGrotesk-Bold";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.modal__button-option {
+  height: 20px;
+  border: none;
+  background-color: #fff;
+  color: #00000080;
+  padding-top: 8px;
+  cursor: pointer;
+  font-family: "CabinetGrotesk-Bold";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+/* .modal__register-submit-button-active{
+   background: rgba(0, 0, 0, 1);
+}
+
+.modal__register-login-button {
+
+  height: 20px;
+  border: none;
+  background-color: #fff;
+  color: #00000080;
+}
+ */
+

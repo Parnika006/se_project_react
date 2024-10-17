@@ -1,11 +1,14 @@
 .footer {
   max-width: 1358px;
   padding: 0;
+  margin-top: auto;
+  
 }
 
 .footer__content {
   display: flex;
   justify-content: space-between;
+  
 }
 
 .footer__name {

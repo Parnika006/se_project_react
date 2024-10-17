@@ -1,8 +1,16 @@
 .sidebar {
   display: flex;
-  gap: 16px;
-  width: 385px;
+  gap: 8px;
+  max-width: 385px;
+  flex-direction: column;
 }
+
+.sidebar__profile {
+display: flex;
+gap: 16px;
+padding: 16px;
+}
+
 .sidebar__username {
   font-family: "CabinetGrotesk-Bold";
   font-size: 20px;
@@ -15,4 +23,28 @@
 .sidebar__avatar {
   width: 56px;
   height: 56px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+.sidebar__edit-profile-button {
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  border: none;
+  cursor: pointer;
+  max-width: 200px;
+  margin-right: auto;
+}
+
+.sidebar__logout-button {
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  border: none;
+  cursor: pointer;
+  max-width: 150px;
+  margin-right: auto;
 }

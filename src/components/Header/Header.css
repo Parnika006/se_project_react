@@ -23,6 +23,7 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
+  cursor: pointer;
 }
 .header__user-container {
   display: flex;
@@ -35,6 +36,26 @@
   font-weight: 700;
   line-height: 24px;
   margin: 0;
+}
+
+.header__login-button {
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.header__signUp-button {
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  border: none;
+  cursor: pointer;
 }
 
 .header__avatar {
