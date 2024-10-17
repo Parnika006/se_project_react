@@ -9,6 +9,7 @@ function ModalWithForm({
   isOpen,
   onSubmit,
   onButtonClick,
+  buttonActive
 }) {
   return (
     <div className={`modal ${isOpen && "modal_opened"}`}>
@@ -22,7 +23,7 @@ function ModalWithForm({
         <form onSubmit={onSubmit} className="modal__form">
           {children}
           <div className="modal__buttons">
-          <button type="submit" className="modal__submit">
+          <button type="submit" className={`modal__submit ${buttonActive ? "modal__submit-active" : ""}`}>
             {buttonText}
           </button>
           <button type="button" onClick={onButtonClick} className="modal__button-option">
@@ -36,3 +37,5 @@ function ModalWithForm({
 }
 
 export default ModalWithForm;
+
+// <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
