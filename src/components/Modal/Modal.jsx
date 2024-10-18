@@ -16,17 +16,20 @@ const Modal = ({ name, onClose, isOpen, children }) => {
   }, [onClose]);
 
   // here is the overlay handler
-  const handleOverlay = (e) => {
+  const handleOverlay = () => {
     /* if (e.target === e.currentTarget) {
       onClose();
     } */
-  
-   onClose();
+
+    onClose();
   };
 
   // then we add the main wrapper with class `modal`
   return (
-    <div className={`modal modal_type_${name} ${isOpen && "modal_opened"}` }onClick={handleOverlay}>
+    <div
+      className={`modal modal_type_${name} ${isOpen && "modal_opened"}`}
+      onClick={handleOverlay}
+    >
       {/* the container for the contents */}
       <div className="modal__container" onClick={(e) => e.stopPropagation()}>
         {/* here will be anything you add as `children`*/}

@@ -1,56 +1,83 @@
-import ModalWithForm from "../ModalWithForm/ModalWithForm"
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useState } from "react";
 
 const RegisterModal = ({
-    closeActiveModal,
-    isOpen,
-    activeModal,
+  closeActiveModal,
+  isOpen,
+  activeModal,
   handleLoginClick,
   handleRegistration,
- 
-  }) => {
-    const [data, setData] = useState({
+  buttonText,
+}) => {
+  /*  const [data, setData] = useState({
       email: "",
       password: "",
       name: "",
       avatar: "",
-    });
+    }); */
 
-    const handleChange = (e) => {
+  /*  const handleChange = (e) => {
       const { name, value } = e.target;
       setData((prevData) => ({
         ...prevData,
         [name]: value,
       }));
-    };
+    }; */
 
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      handleRegistration(data);
-      closeActiveModal();
-      
-    };
+  const [email, setEmail] = useState({ text: "", isValid: false });
+  function handleEmail(e) {
+    setEmail({ isValid: e.target.validity.valid, text: e.target.value });
+  }
 
+  const [password, setPassword] = useState({ text: "", isValid: false });
+  function handlePassword(e) {
+    setPassword({ isValid: e.target.validity.valid, text: e.target.value });
+  }
 
-    return (
-        
-        <ModalWithForm
-          title="Sign Up"   buttonText="Next"
-      
-         buttonText2="or Log in"
-          closeActiveModal={closeActiveModal}
-          isOpened={activeModal === "login"}
-          isOpen={isOpen}
-          onSubmit={handleSubmit}
-          onButtonClick={handleLoginClick}
-        >
-         <label htmlFor="email" className="modal__label">
+  const [name, setName] = useState({ text: "", isValid: false });
+  function handleName(e) {
+    setName({ isValid: e.target.validity.valid, text: e.target.value });
+  }
+
+  const [avatar, setAvatar] = useState({ text: "", isValid: false });
+  function handleAvatar(e) {
+    setAvatar({ isValid: e.target.validity.valid, text: e.target.value });
+  }
+
+  const buttonActive =
+    email.isValid && password.isValid && name.isValid && avatar.isValid
+      ? true
+      : false;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleRegistration({
+      email: email.text,
+      password: password.text,
+      name: name.text,
+      avatar: avatar.text,
+    });
+  };
+
+  return (
+    <ModalWithForm
+      title="Sign Up"
+      buttonText={buttonText}
+      buttonText2="or Log in"
+      closeActiveModal={closeActiveModal}
+      isOpened={activeModal === "register"}
+      isOpen={isOpen}
+      onSubmit={handleSubmit}
+      onButtonClick={handleLoginClick}
+      buttonActive={buttonActive}
+    >
+      <label htmlFor="email" className="modal__label">
         Email*{" "}
         <input
           type="email"
           name="email"
-          value={data.email}
-          onChange={handleChange}
+          value={email.text}
+          onChange={handleEmail}
           className="modal__input"
           id="email"
           placeholder="Email"
@@ -64,8 +91,8 @@ const RegisterModal = ({
         <input
           type="text"
           name="password"
-          value={data.password}
-          onChange={handleChange}
+          value={password.text}
+          onChange={handlePassword}
           className="modal__input"
           id="password"
           placeholder="Password"
@@ -75,12 +102,12 @@ const RegisterModal = ({
         />
       </label>
       <label htmlFor="name" className="modal__label">
-         Name{" "}
+        Name{" "}
         <input
           type="text"
           name="name"
-          value={data.name}
-          onChange={handleChange}
+          value={name.text}
+          onChange={handleName}
           className="modal__input"
           id="name"
           placeholder="Name"
@@ -91,21 +118,15 @@ const RegisterModal = ({
         <input
           type="url"
           name="avatar"
-          value={data.avatar}
-          onChange={handleChange}
+          value={avatar.text}
+          onChange={handleAvatar}
           className="modal__input"
           id="avatar"
           placeholder="Avatar URL"
         />
       </label>
-
-   {/*    <div className="modal__register-button">
-     <button type="submit" className="modal__register-submit-button">Next</button> 
-      <button type="button" className="modal__register-login-button"> or Log in</button>
-      </div>
- */}
-        </ModalWithForm>
-    )
-}
+    </ModalWithForm>
+  );
+};
 
 export default RegisterModal;

@@ -1,4 +1,10 @@
-function DeleteCardModal({ isOpen, card, closeActiveModal, handleDeleteItem }) {
+function DeleteCardModal({
+  isOpen,
+  card,
+  closeActiveModal,
+  handleDeleteItem,
+  buttonText,
+}) {
   return (
     <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
       <div className="modal__content_type_delete">
@@ -21,7 +27,7 @@ function DeleteCardModal({ isOpen, card, closeActiveModal, handleDeleteItem }) {
               handleDeleteItem(card);
             }}
           >
-            Yes, delete item
+            {buttonText}
           </button>
 
           <button

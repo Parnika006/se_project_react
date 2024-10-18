@@ -6,26 +6,37 @@ const AddItemModal = ({
   isOpen,
   activeModal,
   handleAddItem,
+  buttonText,
 }) => {
-  const [name, setName] = useState("");
-  const handleNameChange = (e) => {
-    setName(e.target.value);
+  const [name, setName] = useState({ text: "", isValid: false });
+  const handleItemName = (e) => {
+    setName({ isValid: e.target.validity.valid, text: e.target.value });
   };
 
-  const [link, setUrl] = useState("");
-  const handleUrlChange = (e) => {
-    setUrl(e.target.value);
+  const [link, setUrl] = useState({ text: "", isValid: false });
+  const handleItemUrl = (e) => {
+    setUrl({ isValid: e.target.validity.valid, text: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleAddItem({ name, weather: weatherInput, imageUrl: link, resetInputs });
+    handleAddItem({
+      name: name.text,
+      weather: weatherInput.text,
+      imageUrl: link.text,
+    });
   };
 
-  const [weatherInput, setWeatherInput] = useState("");
+  const [weatherInput, setWeatherInput] = useState({
+    text: "",
+    isValid: false,
+  });
   const handleWeatherChange = (e) => {
-    setWeatherInput(e.target.value);
+    setWeatherInput({ isValid: e.target.validity.valid, text: e.target.value });
   };
+
+  const buttonActive =
+    name.isValid && link.isValid && weatherInput.isValid ? true : false;
 
   const resetInputs = () => {
     setName("");
@@ -42,11 +53,12 @@ const AddItemModal = ({
   return (
     <ModalWithForm
       title="New garment"
-      buttonText="Add garment"
+      buttonText={buttonText}
       closeActiveModal={closeActiveModal}
       isOpened={activeModal === "add-garment"}
       isOpen={isOpen}
       onSubmit={handleSubmit}
+      buttonActive={buttonActive}
     >
       <label htmlFor="name" className="modal__label">
         Name{" "}
@@ -55,8 +67,8 @@ const AddItemModal = ({
           className="modal__input"
           id="name"
           placeholder="Name"
-          value={name}
-          onChange={handleNameChange}
+          value={name.text}
+          onChange={handleItemName}
           minLength="1"
           maxLength="30"
           required
@@ -69,8 +81,8 @@ const AddItemModal = ({
           className="modal__input"
           id="imageUrl"
           placeholder="Image URL"
-          value={link}
-          onChange={handleUrlChange}
+          value={link.text}
+          onChange={handleItemUrl}
           minLength="1"
           required
         />
@@ -119,5 +131,3 @@ const AddItemModal = ({
 };
 
 export default AddItemModal;
-
-
