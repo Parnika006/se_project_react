@@ -22,14 +22,17 @@ function ItemModal({ card, closeActiveModal, handleDeleteClick, isLoggedIn }) {
           <h2 className="modal__caption">{card.name}</h2>
           <p className="modal__weather">Weather: {card.weather}</p>
         </div>
+        
+        {isLoggedIn && isOwn && (
         <button
-          className={`modal__delete-click-button ${isOwn && isLoggedIn ? 'item__delete-button_visible' : 'item__delete-button_hidden'}`}
+          className="modal__delete-click-button"
           onClick={() => {
             handleDeleteClick(card);
           }}
         >
           Delete item
         </button>
+        )}
       </div>
     </div>
   );

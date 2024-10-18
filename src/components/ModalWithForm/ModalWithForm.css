@@ -46,7 +46,7 @@
 
 .modal__image {
   padding: 0;
-  width: 498px;
+ width: 498px;
   height: 498px;
   object-fit: contain;
   overflow: hidden;
@@ -194,13 +194,7 @@ background-image: url(../../assets/close.svg);
   cursor: pointer;
 }
 
-.item__delete-button_visible .modal__delete-click-button {
-  visibility: visible;
-}
 
-.item__delete-button_hidden .modal__delete-click-button {
-  visibility: hidden;
-}
 
 .modal__content_type_delete {
   position: relative;

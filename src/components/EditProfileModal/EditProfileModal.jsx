@@ -79,7 +79,6 @@ const EditProfileModal = ({
           className="modal__input"
           id="avatar"
           minLength="1"
-          maxLength="30"
           required
         />
       </label>

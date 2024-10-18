@@ -16,6 +16,9 @@ function Header({ handleAddClick, weatherData, handleLoginClick, handleSignUpCli
 
   const currentUser = useContext(CurrentUserContext);
 
+
+
+
 if(!isLoggedIn){
 
   return (
@@ -28,13 +31,7 @@ if(!isLoggedIn){
         {currentDate}, {weatherData.city}
       </p>
       <ToggleSwitch />
-      <button
-        onClick={handleAddClick}
-        type="button"
-        className="header__add-clothes-button"
-      >
-        + Add Clothes
-      </button>
+     
       <Link to="/profile" className="header__link">
         <div className="header__user-container">
           <button type="button" className="header__signUp-button" onClick={handleSignUpClick}>Sign Up</button>
@@ -56,6 +53,7 @@ if(!isLoggedIn){
         {currentDate}, {weatherData.city}
       </p>
       <ToggleSwitch />
+     
       <button
         onClick={handleAddClick}
         type="button"
@@ -63,6 +61,7 @@ if(!isLoggedIn){
       >
         + Add Clothes
       </button>
+      
       <Link to="/profile" className="header__link">
         <div className="header__user-container">
         <p className="header__username"> {currentUser.name}</p>
@@ -75,3 +74,5 @@ if(!isLoggedIn){
 }
 
 export default Header;
+
+// <div className={`modal ${isOpen ? "modal_opened" : ""}`}>

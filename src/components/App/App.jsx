@@ -40,7 +40,7 @@ function App() {
 const [currentUser, setCurrentUser] =useState(null);
 
 
-console.log(clothingItems)
+
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -92,22 +92,17 @@ console.log(clothingItems)
       return;
     }
 
-
-  api
+ api
     .getUserInfo(jwt)
     .then((data) => {
       // If the response is successful, log the user in, save their 
       // data to state, and navigate them to /profile.
       setIsLoggedIn(true);
       setCurrentUser(data);
-      navigate("/profile");
+     // navigate("/profile");
     })
     .catch(console.error);
 }, [navigate]); 
-
-
-
-
 
 
   const handleLogin = ({ email, password }) => {
@@ -182,7 +177,7 @@ console.log(clothingItems)
   }, []);
 
   const handleAddItem = ({ name, weather, imageUrl }) => {
-    // console.log(name, weather, imageUrl);
+    
     const token = getToken();
     api
       .addItems(name, weather, imageUrl, token)
@@ -200,7 +195,6 @@ console.log(clothingItems)
       .removeItems(item._id, token)
       .then(() => {
         setClothingItems(clothingItems.filter((card) => card._id !== item._id));
-
         closeActiveModal();
       })
       .catch((err) => console.error(err));
@@ -274,8 +268,6 @@ console.log(clothingItems)
                   weatherData={weatherData}
                   handleCardClick={handleCardClick}
                   clothingItems={clothingItems}
-                  
-            
                 />
               }
             />

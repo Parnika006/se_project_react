@@ -17,8 +17,6 @@ function ItemCard({ item, onCardClick, handleCardLike, isLoggedIn }) {
   
   const handleLike = (e) => {
     e.preventDefault();
-    console.log("itemcar");
-    console.log(item);
     handleCardLike(item._id, isLiked);
   }
 
