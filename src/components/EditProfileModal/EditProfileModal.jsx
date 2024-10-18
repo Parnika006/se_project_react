@@ -44,7 +44,7 @@ const EditProfileModal = ({
       isOpen={isOpen}
       onSubmit={handleSubmit}
     >
-      <label htmlFor="Name" className="modal__label">
+      <label htmlFor="name" className="modal__label">
         Name *{" "}
         <input
           type="text"

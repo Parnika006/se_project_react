@@ -39,9 +39,9 @@ const AddItemModal = ({
     name.isValid && link.isValid && weatherInput.isValid ? true : false;
 
   const resetInputs = () => {
-    setName("");
-    setWeatherInput("");
-    setUrl("");
+    setName({ text: "", isValid: false });
+    setWeatherInput({ text: "", isValid: false });
+    setUrl({ text: "", isValid: false });
   };
 
   useEffect(() => {
@@ -60,7 +60,7 @@ const AddItemModal = ({
       onSubmit={handleSubmit}
       buttonActive={buttonActive}
     >
-      <label htmlFor="name" className="modal__label">
+      <label className="modal__label">
         Name{" "}
         <input
           type="text"
@@ -74,7 +74,7 @@ const AddItemModal = ({
           required
         />
       </label>
-      <label htmlFor="imageUrl" className="modal__label">
+      <label className="modal__label">
         Image{" "}
         <input
           type="link"

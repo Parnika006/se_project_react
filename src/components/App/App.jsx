@@ -283,6 +283,7 @@ function App() {
                     weatherData={weatherData}
                     handleCardClick={handleCardClick}
                     clothingItems={clothingItems}
+                    isLoggedIn={isLoggedIn}
                   />
                 }
               />
