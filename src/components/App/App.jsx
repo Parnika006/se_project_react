@@ -208,7 +208,12 @@ const [currentUser, setCurrentUser] =useState(null);
       const token = getToken();
       api.editProfile(name, avatar, token)
       .then(() => {
-       setCurrentUser({name, avatar});
+       // setCurrentUser({name, avatar});
+       setCurrentUser((prevUser) => ({
+        ...prevUser,
+        name,
+        avatar,
+      }));
         closeActiveModal();
       })
 
