@@ -181,7 +181,9 @@ function App() {
   }, []);
 
   const handleAddItem = ({ name, weather, imageUrl }) => {
+    console.log("add item function called");
     const token = getToken();
+    console.log(token);
     setIsLoading(true);
     api
       .addItems(name, weather, imageUrl, token)
