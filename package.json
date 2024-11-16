@@ -1,6 +1,6 @@
 {
   "name": "se_project_react-main",
-  "homepage": "https://Parnika006.github.io/",
+  "homepage": "https://gcp.jumpingcrab.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && scp -r ./dist/* parnikasingh006@gcp.jumpingcrab.com:/home/tripletenuser/frontend"
   },
   "dependencies": {
     "react": "^18.3.1",

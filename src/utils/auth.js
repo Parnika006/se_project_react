@@ -1,4 +1,4 @@
-import { baseUrl } from "./api";
+import { baseUrl } from "./constants";
 import { handleServerResponse } from "./api";
 
 export const register = (email, password, name, avatar) => {

@@ -116,4 +116,9 @@ export const coordinates = {
   longitude: -122.193375,
 };
 
+export const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.gcp.jumpingcrab.com"
+    : "http://localhost:3001";
+
 export const APIkey = "9e2df8601b4eb145eda4ce3cfdf87b8d";

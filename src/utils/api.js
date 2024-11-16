@@ -1,4 +1,4 @@
-export const baseUrl = "http://localhost:3001";
+import { baseUrl } from "./constants";
 
 export const handleServerResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
@@ -33,10 +33,7 @@ function removeItems(id, token) {
   }).then(handleServerResponse);
 }
 
-
-
-
- const getUserInfo = (token) => {
+const getUserInfo = (token) => {
   // Send a GET request to /users/me
   return fetch(`${baseUrl}/users/me`, {
     method: "GET",
@@ -47,9 +44,9 @@ function removeItems(id, token) {
       Authorization: `Bearer ${token}`,
     },
   }).then(handleServerResponse);
-}
+};
 
- const editProfile = (name, avatar, token) => {
+const editProfile = (name, avatar, token) => {
   return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: {
@@ -58,38 +55,32 @@ function removeItems(id, token) {
     },
     body: JSON.stringify({
       name,
-      avatar
+      avatar,
     }),
   }).then(handleServerResponse);
-}
+};
 
 const addCardLike = (id, token) => {
-  console.log(id)
-  return fetch(`${baseUrl}/items/${id}/likes`, {
-  method: "PUT",
-  headers: {
-    "Content-Type": "application/json",
-    authorization: `Bearer ${token}`,
-  },
- 
-}).then(handleServerResponse);
-}
-
-const removeCardLike = (id, token) => { 
   console.log(id);
   return fetch(`${baseUrl}/items/${id}/likes`, {
-  method: "DELETE",
-  headers: {
-    "Content-Type": "application/json",
-    authorization: `Bearer ${token}`,
-  },
- 
-}).then(handleServerResponse);
-}
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(handleServerResponse);
+};
 
-
-
-
+const removeCardLike = (id, token) => {
+  console.log(id);
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(handleServerResponse);
+};
 
 const api = {
   getItems,
@@ -98,10 +89,9 @@ const api = {
   getUserInfo,
   editProfile,
   addCardLike,
-  removeCardLike
+  removeCardLike,
 };
 
 export default api;
-
 
 //json-server --watch db.json --id _id --port 3001
