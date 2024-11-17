@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 
 import "./App.css";
 import Header from "../Header/Header";
@@ -71,7 +71,7 @@ function App() {
 
   const navigate = useNavigate();
 
-  function handleSubmit(request) {
+  /*  function handleSubmit(request) {
     // start loading
     setIsLoading(true);
     request()
@@ -82,7 +82,7 @@ function App() {
       .catch(console.error)
       // and in finally we need to stop loading
       .finally(() => setIsLoading(false));
-  }
+  } */
 
   const handleRegistration = ({ email, password, name, avatar }) => {
     setIsLoading(true);
