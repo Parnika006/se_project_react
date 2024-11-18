@@ -181,9 +181,8 @@ function App() {
   }, []);
 
   const handleAddItem = ({ name, weather, imageUrl }) => {
-    console.log("add item function called");
     const token = getToken();
-    console.log(token);
+
     setIsLoading(true);
     api
       .addItems(name, weather, imageUrl, token)
@@ -235,8 +234,6 @@ function App() {
   };
 
   const handleCardLike = (id, isLiked) => {
-    console.log(123);
-    console.log("Id in App.jsx", id);
     const token = getToken();
     // Check if this card is not currently liked
     !isLiked

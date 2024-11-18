@@ -61,7 +61,6 @@ const editProfile = (name, avatar, token) => {
 };
 
 const addCardLike = (id, token) => {
-  console.log(id);
   return fetch(`${baseUrl}/items/${id}/likes`, {
     method: "PUT",
     headers: {
@@ -72,7 +71,6 @@ const addCardLike = (id, token) => {
 };
 
 const removeCardLike = (id, token) => {
-  console.log(id);
   return fetch(`${baseUrl}/items/${id}/likes`, {
     method: "DELETE",
     headers: {
