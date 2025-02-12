@@ -1,11 +1,16 @@
+
 # 🌦 What to Wear - Frontend  
 
 ## 🌟 Overview  
-**What to Wear** is a **React-based** application that helps users securely log in and view real-time weather updates. Users can also **add suitable clothing item images** based on the weather conditions.  
+What to Wear is a **React-based** application that allows users to securely log in and view real-time weather updates. Users can also **add suitable clothing item images** based on the weather conditions.  
 
 ## 🔗 Live Demo & Repository  
 - 🚀 [Live App](https://www.gcp.jumpingcrab.com/)  
-- 💻 [Frontend Repository](https://github.com/Parnika006/se_project_react)  
+- 💻 [Frontend Repository](https://github.com/Parnika006/weather-app-frontend)  
+
+## 🎨 Figma Design  
+- 📐 [Sprint 11 Design](https://www.figma.com/design/dQLJwEKasIdspciJAJrCaf/Sprint-11_-WTWR?node-id=311-433&p=f&t=xIUIn7umwzegRBI7-0)  
+- 📐 [Sprint 10 Design](https://www.figma.com/design/F03bTb81Pw8IDPj5Y9rc5i/Sprint-10-%7C-WTWR?node-id=311-433&p=f&t=3OOJycdP6mLAN697-0)  
 
 ## 🛠 Tech Stack  
 - React.js  
@@ -21,17 +26,14 @@
 - 📱 **Responsive UI:** Fully optimized for mobile and desktop screens.  
 
 ## 🚀 Installation & Setup  
-
 ### Prerequisites:  
-- Node.js & npm installed  
+-  Npm installed  
 
 ### Setup:  
-```sh
-git clone https://github.com/Parnika006//se_project_react
+git clone https://github.com/Parnika006/weather-app-frontend
 cd weather-app-frontend
 npm install
 npm start
-```  
 
 ## 📌 Roadmap  
 ✅ Implemented JWT authentication  
@@ -40,6 +42,7 @@ npm start
 
 ## 🤝 Contributing  
 Contributions, issues, and feature requests are welcome! Feel free to fork the repository and submit a pull request.  
+
 
 ## 📩 Contact  
 Feel free to connect with me:  
