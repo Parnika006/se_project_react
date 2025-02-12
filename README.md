@@ -25,7 +25,6 @@ The Weather App is a **React-based** application that allows users to securely l
 - Node.js & npm installed
 
 ### Setup:
-```sh
 git clone https://github.com/Parnika006/weather-app-frontend
 cd weather-app-frontend
 npm install
