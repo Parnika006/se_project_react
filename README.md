@@ -31,21 +31,20 @@ cd weather-app-frontend
 npm install
 npm start
 
-
 ## 📌 Roadmap
-✅ Implemented JWT authentication
-✅ Added "Save Article" functionality
-🔜 Deploy backend to a cloud server
-🔜 Improve search filtering
+✅ Implemented JWT authentication  
+✅ Added "Add Clothing" functionality  
+🔜 Deploy backend to a cloud server  
+
 
 ## 🤝 Contributing
 Contributions, issues, and feature requests are welcome! Feel free to fork the repository and submit a pull request.
 
-## 📩 Contact
-Feel free to connect with me:
+## 📩 Contact  
+Feel free to connect with me:  
 
-📧 Email: [parnikasingh006@gmail.com](mailto:parnikasingh006@gmail.com)
-💼 [LinkedIn](https://www.linkedin.com/in/parnikasingh006/)
-🔗 [GitHub](https://github.com/Parnika006)
+📧 Email: [parnikasingh006@gmail.com](mailto:parnikasingh006@gmail.com)  
+💼 [LinkedIn](https://www.linkedin.com/in/parnikasingh006/)  
+🔗 [GitHub](https://github.com/Parnika006)  
 
 
